@@ -1,0 +1,230 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CardGrid from "../components/CardGrid.astro";
+import Footer from '../components/Footer.astro';
+import Contact from "../components/Contact.astro";
+
+interface CardProps {
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+  live: string;
+  code: string;
+}
+
+interface TechProps {
+  image: string;
+  title: string;
+}
+
+const techs: TechProps[] = [
+  {
+    image: "/react.png",
+    title: "React",
+  },
+  {
+    image: "",
+    title: "Angular",
+  },
+  {
+    image: "",
+    title: "Astro",
+  },
+];
+
+const cards: CardProps[] = [
+  {
+    image: "/spotifyClone.png",
+    title: "Spotify Clone",
+    description:
+      "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+      
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+  {
+    image: "/spotifyClone.png",
+    title: "Spotify Clone",
+    description:
+      "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+      
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+  {
+    image: "/spotifyClone.png",
+    title: "Spotify Clone",
+    description:
+      "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+      
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+  {
+    image: "/spotifyClone.png",
+    title: "Spotify Clone",
+    description:
+      "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+      
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+];
+---
+
+<Layout title="Yojan arbey loaiza agudelo | Portfolio web.">
+  <!-- main -->
+  <div
+    class="relative bg-cover bg-center h-[92vh]"
+    style="background-image: url('https://i.pinimg.com/originals/28/a1/77/28a177c982fd18ed254307659d82104d.gif');"
+  >
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <div class="text-center">
+        <h1
+          class="tracking-wide text-9xl text-white font-bold mt-[-20%] transition-transform duration-300 transform hover:scale-110"
+        >
+          HELLO, I'M YOJAN
+        </h1>
+        <h3 class="tracking-widest text-xl text-gray-400">
+          //Passionate Learner Building Innovative Front-End Experiences.
+        </h3>
+        <div class="mouse_icon"></div>
+      </div>
+    </div>
+  </div>
+  <!-- about -->
+  <section id="about" class="bg-black">
+    <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        <div class="max-w-lg">
+          <h2 class="text-3xl font-extrabold text-white sm:text-7xl">
+            About <span class="text-lime-500">Me</span>
+          </h2>
+          <p class="mt-4 text-white text-xl">
+            🚀 I'm a proactive individual who thrives as an excellent team
+            player, organized, and responsible. I'm always eager to dive into
+            new experiences, driven by the excitement of learning. <br />My
+            goal? Securing a challenging and dynamic position where I can share
+            my experience and at the same time gain new knowledge 🧠 as I embark
+            on a journey of continuous growth and discovery. Let's make waves
+            together! 🌊
+          </p>
+          <div class="mt-8">            
+            <a href="Yojanarbeyloaizaagudelo_CV.pdf" download="Yojanarbeyloaizaagudelo_CV.pdf"class="text-lime-500 hover:text-lime-300 text-2xl"
+              >DOWNLOAD MY CV
+              <span class="ml-2">&#8595;</span></a
+            >
+          </div>
+        </div>
+        <div class="mt-12 md:mt-0">
+          <img
+            src="/profile.jpg"
+            alt="About Us Image"
+            class="object-cover rounded-lg shadow-md"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- tech-->
+
+    <section class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-white flex justify-center text-7xl">My Stack</h1>
+      <br /><br />
+      <div class="flex gap-6 flex-wrap justify-center text-white ">
+        <img src="/react.png" alt="React" class="w-12 transition-transform duration-200 transform hover:scale-125 " />
+        <img src="/angular.png" alt="Angular" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/astro.svg" alt="Astro" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/nextjs.png" alt="NextJS" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/javascript.png" alt="JavaScript" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/typescript.png" alt="TypeScript" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/python.png" alt="Python" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/tailwind.png" alt="Tailwind" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+        <img src="/git.png" alt="Git" class="w-12 transition-transform duration-200 transform hover:scale-125" />
+      </div>
+    </section>
+
+  <!-- works -->
+  <section id="works" class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <span class="text-lime-500 text-3xl">My works</span>
+    <h1 class="text-white text-8xl">Projects</h1>
+    <br /><br />
+    <CardGrid cards={cards} />
+  </section> <br><br>
+
+
+  <!-- contact-->
+  <section id="contact">
+    <Contact/>  
+  </section>
+  <Footer/>
+</Layout>
+
+<style>
+  .mouse_icon {
+    position: relative;
+    width: 30px;
+    height: 60px;
+    margin: 250px auto 0;
+    border: 2px solid rgb(10, 243, 10);
+    border-radius: 50px;
+  }
+  .mouse_icon:after {
+    position: absolute;
+    top: 15px;
+    width: 15px;
+    height: 15px;
+    content: "";
+    background-color: rgb(10, 243, 10);
+    left: calc(60% - 10px);
+    border-radius: 10px;
+    animation: mouse 1.5s infinite;
+  }
+  @keyframes mouse {
+    0% {
+      opacity: 1;
+      top: 1px;
+    }
+    100% {
+      opacity: 0;
+      top: 30px;
+    }
+  }
+</style>

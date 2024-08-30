@@ -1,0 +1,32 @@
+---
+interface CardProps {
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+  live: string;
+  code: string;
+}
+
+const { image, title, description, tags, live, code } =
+  Astro.props as CardProps;
+---
+
+<div class=" transition-transform duration-300 transform hover:scale-105 bg-black rounded-lg p-4 shadow-lg border border-lime-500">
+  <div class="flex justify-end ">
+    <a href={live}><img class="w-10" src="/live.webp" /> </a>
+    <a href={code}><img class="w-10" src="/github.png" /> </a>
+  </div>
+  <img src={image} alt={title} class="w-full h-47 object-cover rounded-md">
+  <div class="mt-4">
+    <h3 class="text-xl font-bold text-lime-500">{title}</h3>
+    <p class="text-white">{description}</p>
+    <div class="mt-2">
+      {
+        tags.map((tag) => (
+          <span class="inline-block bg-gray-800 text-green-400 text-xs  mr-2 px-2.5 py-0.5 rounded">{`#${tag}`}</span>
+        ))
+      }
+    </div>
+  </div>
+</div>

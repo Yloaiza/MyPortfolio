@@ -1,0 +1,26 @@
+---
+import Card from "./Card.astro";
+
+interface CardProps {
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+  live: string;
+  code: string;
+}
+
+interface CardGridProps {
+  cards: CardProps[];
+}
+
+const cards = Astro.props.cards as CardGridProps['cards'];
+
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 ">
+  {cards.map(card => (
+    <Card {...card} />
+
+  ))}
+</div>
+
