@@ -1,0 +1,51 @@
+<div
+    class="relative bg-cover bg-center h-[92vh]"
+    style="background-image: url('https://i.pinimg.com/originals/28/a1/77/28a177c982fd18ed254307659d82104d.gif');"
+  >
+    <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <div class="text-center">
+        <h1
+          class="tracking-wide text-9xl text-white font-bold mt-[-20%] transition-transform duration-300 transform hover:scale-110"
+        >
+          HELLO, I'M YOJAN
+        </h1>
+        <h3 class="tracking-widest text-2xl text-gray-400">
+          //Passionate Learner Building Innovative Front-End Experiences.
+        </h3>
+        <div class="mouse_icon"></div>
+      </div>
+    </div>
+  </div>
+  
+  <style>
+    .mouse_icon {
+      position: relative;
+      width: 30px;
+      height: 60px;
+      margin: 250px auto 0;
+      border: 2px solid rgb(10, 243, 10);
+      border-radius: 50px;
+    }
+    .mouse_icon:after {
+      position: absolute;
+      top: 15px;
+      width: 15px;
+      height: 15px;
+      content: "";
+      background-color: rgb(10, 243, 10);
+      left: calc(60% - 10px);
+      border-radius: 10px;
+      animation: mouse 1.5s infinite;
+    }
+    @keyframes mouse {
+      0% {
+        opacity: 1;
+        top: 1px;
+      }
+      100% {
+        opacity: 0;
+        top: 30px;
+      }
+    }
+  </style>
+  

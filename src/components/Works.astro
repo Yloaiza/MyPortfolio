@@ -1,0 +1,109 @@
+---
+import CardGrid from "../components/CardGrid.astro";
+
+interface CardProps {
+  image: string;
+  title: string;
+  description: string;
+  tags: string[];
+  live: string;
+  code: string;
+}
+
+interface TechProps {
+  image: string;
+  title: string;
+}
+
+const techs: TechProps[] = [
+  {
+    image: "/react.png",
+    title: "React",
+  },
+  {
+    image: "",
+    title: "Angular",
+  },
+  {
+    image: "",
+    title: "Astro",
+  },
+];
+
+const cards: CardProps[] = [
+  {
+    image: "/spotify.png",
+    title: "Spotify Clone",
+    description:
+      "This project is a Spotify clone built using modern web technologies. The application replicates key features of Spotify, such as music streaming, playlists, and user interface components, providing a seamless and responsive user experience across devices.",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+  {
+    image: "/spotify.png",
+    title: "Spotify Clone",
+    description: "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+  {
+    image: "/spotify.png",
+    title: "Spotify Clone",
+    description: "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+  {
+    image: "/spotify.png",
+    title: "Spotify Clone",
+    description: "Spotify clone functional and interactive",
+    tags: [
+      "React",
+      "Astro",
+      "Svelte",
+      "Tailwindcss",
+      "Zustand",
+      "Typescript",
+      "React router dom",
+    ],
+    live: "https://spotifyastro.netlify.app",
+    code: "https://github.com/Yloaiza/SpotifyAstro",
+  },
+];
+---
+
+<section id="works" class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+  <h1 class="text-lime-500 text-8xl">
+    <span class="text-white">My</span> Projects
+  </h1>
+  <br /><br />
+  <CardGrid cards={cards} />
+</section>
+<br /><br />

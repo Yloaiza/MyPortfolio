@@ -12,21 +12,47 @@ const { image, title, description, tags, live, code } =
   Astro.props as CardProps;
 ---
 
-<div class=" transition-transform duration-300 transform hover:scale-105 bg-black rounded-lg p-4 shadow-lg border border-lime-500">
-  <div class="flex justify-end ">
-    <a href={live}><img class="w-10" src="/live.webp" /> </a>
-    <a href={code}><img class="w-10" src="/github.png" /> </a>
-  </div>
-  <img src={image} alt={title} class="w-full h-47 object-cover rounded-md">
-  <div class="mt-4">
-    <h3 class="text-xl font-bold text-lime-500">{title}</h3>
-    <p class="text-white">{description}</p>
-    <div class="mt-2">
-      {
-        tags.map((tag) => (
-          <span class="inline-block bg-gray-800 text-green-400 text-xs  mr-2 px-2.5 py-0.5 rounded">{`#${tag}`}</span>
-        ))
-      }
-    </div>
-  </div>
-</div>
+    <a
+      href={live}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="border dark:border-lime-500 rounded-lg p-6 relative  dark:hover:border-white transition-all duration-300 block group transform hover:scale-105"
+    >
+      <div class="flex items-center mb-4">
+        <img
+          src={image}
+          alt={title}
+          class="w-12 h-12 object-contain rounded-xl transition-all duration-300 group-hover:scale-110"
+        />
+        <div class="ml-4"><h3 class="text-2xl text-lime-500 font-semibold">{title}</h3></div>
+      </div>
+      <p class="text-gray-400 text-lg mb-6">
+          {description}
+      </p>
+      <div class="mt-2">
+        {
+          tags.map((tag) => (
+            <span class="inline-block bg-gray-800 text-green-400 text-xs  mr-2 px-2.5 py-0.5 rounded">{`#${tag}`}</span>
+          ))
+        }
+      </div>
+      <div
+        class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      >
+      
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-arrow-up-right w-5 h-5 text-gray-500"
+          ><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg
+        >
+      </div>
+    </a>
+   

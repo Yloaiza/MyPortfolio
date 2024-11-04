@@ -1,0 +1,77 @@
+<section class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
+  <h1 class="text-white flex justify-center text-7xl">My Stack</h1>
+  <br /><br />
+  <div
+    x-data="{}"
+    x-init="$nextTick(() => {
+      let ul = $refs.logos;
+      ul.insertAdjacentHTML('afterend', ul.outerHTML);
+      ul.nextSibling.setAttribute('aria-hidden', 'true');
+  })"
+    class="opacity-80 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+  >
+    <ul
+      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+    >
+      <li>
+        <img src="/react.png" alt="react" />
+      </li>
+      <li>
+        <img src="./angular.png" alt="angular" />
+      </li>
+      <li>
+        <img src="./astro.svg" alt="astro" />
+      </li>
+      <li>
+        <img src="./nextjs.png" alt="nextjs" />
+      </li>
+      <li>
+        <img src="./javascript.png" alt="js" />
+      </li>
+      <li>
+        <img src="./typescript.png" alt="ts" />
+      </li>
+      <li>
+        <img src="./python.png" alt="python" />
+      </li>
+      <li>
+        <img src="./tailwind.png" alt="tailwind" />
+      </li>
+      <li>
+        <img src="./git.png" alt="git" />
+      </li>
+    </ul>
+    <ul
+      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+      aria-hidden="true"
+    >
+      <li>
+        <img src="/react.png" alt="Facebook" />
+      </li>
+      <li>
+        <img src="./angular.png" alt="Disney" />
+      </li>
+      <li>
+        <img src="./astro.svg" alt="Airbnb" />
+      </li>
+      <li>
+        <img src="./nextjs.png" alt="Apple" />
+      </li>
+      <li>
+        <img src="./javascript.png" alt="Spark" />
+      </li>
+      <li>
+        <img src="./typescript.png" alt="Samsung" />
+      </li>
+      <li>
+        <img src="./python.png" alt="Quora" />
+      </li>
+      <li>
+        <img src="./tailwind.png" alt="Sass" />
+      </li>
+      <li>
+        <img src="./git.png" alt="Sass" />
+      </li>
+    </ul>
+  </div>
+</section>
