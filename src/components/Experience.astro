@@ -1,0 +1,82 @@
+---
+// src/components/Experience.astro
+---
+
+<section id="experience" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="space-y-4 mb-16">
+    <span class="text-xs font-mono uppercase tracking-widest text-lime-400" data-i18n="exp.section.tag">// Career & Background</span>
+    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight" data-i18n="exp.section.title">Work Experience</h2>
+  </div>
+
+  <div class="space-y-12">
+    <!-- Experiencia 1: Viva Air -->
+    <div class="group relative grid grid-cols-1 lg:grid-cols-12 gap-6 items-start cursor-pointer">
+      
+      <!-- Metadata / Izquierda -->
+      <aside class="lg:col-span-4 space-y-2 transition-all duration-300 group-hover:-translate-y-0.5">
+        <p class="text-xs font-mono text-lime-400 font-semibold" data-i18n="exp.1.date">Oct 2022 – Jun 2023 · (9 months)</p>
+        <div>
+          <h3 class="text-xl font-bold text-white group-hover:text-lime-400 transition-colors duration-300" data-i18n="exp.1.role">Software Developer</h3>
+          <p class="text-sm font-medium text-zinc-400" data-i18n="exp.1.company">Viva Air</p>
+        </div>
+        <div class="text-[11px] font-mono text-zinc-500 space-y-0.5">
+          <p data-i18n="exp.1.contract">Internship contract · Hybrid</p>
+          <p data-i18n="exp.1.location">Medellín, Antioquia, Colombia</p>
+        </div>
+      </aside>
+
+      <!-- Contenido / Derecha -->
+      <article class="lg:col-span-8 relative rounded-2xl border border-white/10 bg-zinc-900/40 p-6 sm:p-8 backdrop-blur-md overflow-hidden transition-all duration-500 group-hover:-translate-y-1 group-hover:border-lime-500/40 group-hover:bg-zinc-900/60">
+        
+        <!-- Banda de luz Sweep -->
+        <div class="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="absolute -top-[50%] -bottom-[50%] w-1/2 bg-gradient-to-r from-transparent via-lime-400/15 to-transparent -rotate-45 -translate-x-[200%] group-hover:translate-x-[350%] transition-transform duration-1000 ease-in-out"></div>
+        </div>
+
+        <!-- Esquinas decorativas -->
+        <span class="absolute top-3 left-3 h-2.5 w-2.5 border-t-2 border-l-2 border-lime-500/50 z-10 transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border-lime-400"></span>
+        <span class="absolute bottom-3 right-3 h-2.5 w-2.5 border-b-2 border-r-2 border-lime-500/50 z-10 transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:border-lime-400"></span>
+
+        <div class="relative z-10 space-y-6">
+          <p class="text-sm text-zinc-300 leading-relaxed font-normal" data-i18n="exp.1.summary">
+            Contributed to the design, development, and implementation of software solutions aimed at improving business operations and enhancing the overall user experience.
+          </p>
+
+          <div class="rounded-xl border border-white/5 bg-zinc-950/80 p-4 space-y-1.5 transition-colors duration-300 group-hover:border-lime-500/20">
+            <p class="text-[10px] font-mono uppercase tracking-wider text-lime-400 font-semibold" data-i18n="exp.1.impactLabel">WHY IT MATTERS</p>
+            <p class="text-xs text-zinc-400 leading-relaxed" data-i18n="exp.1.impactText">Hands-on experience with Agile methodologies, clean code practices, and scalable software architecture across the full SDLC.</p>
+          </div>
+
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-3 text-xs text-zinc-300 leading-relaxed">
+              <span class="mt-1.5 h-1 w-1 rounded-full bg-lime-400 shrink-0 transition-transform duration-300 group-hover:scale-125"></span>
+              <span data-i18n="exp.1.detail.1">Developed, tested, and debugged applications using Java and Python, ensuring code quality, functionality, and maintainability.</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-zinc-300 leading-relaxed">
+              <span class="mt-1.5 h-1 w-1 rounded-full bg-lime-400 shrink-0 transition-transform duration-300 group-hover:scale-125"></span>
+              <span data-i18n="exp.1.detail.2">Identified, analyzed, and resolved software issues to improve application performance, stability, and reliability.</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-zinc-300 leading-relaxed">
+              <span class="mt-1.5 h-1 w-1 rounded-full bg-lime-400 shrink-0 transition-transform duration-300 group-hover:scale-125"></span>
+              <span data-i18n="exp.1.detail.3">Collaborated with senior developers and cross-functional teams using Agile methodology principles.</span>
+            </li>
+            <li class="flex items-start gap-3 text-xs text-zinc-300 leading-relaxed">
+              <span class="mt-1.5 h-1 w-1 rounded-full bg-lime-400 shrink-0 transition-transform duration-300 group-hover:scale-125"></span>
+              <span data-i18n="exp.1.detail.4">Participated in the continuous improvement of development processes to deliver efficient software solutions.</span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-white/5">
+            <span class="text-[10px] font-mono bg-zinc-950/80 border border-white/10 px-2.5 py-1 rounded-md text-zinc-400 transition-all duration-200 hover:text-white hover:border-lime-500/60 hover:bg-zinc-900 hover:scale-105">JAVA</span>
+            <span class="text-[10px] font-mono bg-zinc-950/80 border border-white/10 px-2.5 py-1 rounded-md text-zinc-400 transition-all duration-200 hover:text-white hover:border-lime-500/60 hover:bg-zinc-900 hover:scale-105">PYTHON</span>
+            <span class="text-[10px] font-mono bg-zinc-950/80 border border-white/10 px-2.5 py-1 rounded-md text-zinc-400 transition-all duration-200 hover:text-white hover:border-lime-500/60 hover:bg-zinc-900 hover:scale-105">AGILE / SCRUM</span>
+            <span class="text-[10px] font-mono bg-zinc-950/80 border border-white/10 px-2.5 py-1 rounded-md text-zinc-400 transition-all duration-200 hover:text-white hover:border-lime-500/60 hover:bg-zinc-900 hover:scale-105">SDLC</span>
+            <span class="text-[10px] font-mono bg-zinc-950/80 border border-white/10 px-2.5 py-1 rounded-md text-zinc-400 transition-all duration-200 hover:text-white hover:border-lime-500/60 hover:bg-zinc-900 hover:scale-105">DEBUGGING</span>
+            <span class="text-[10px] font-mono bg-zinc-950/80 border border-white/10 px-2.5 py-1 rounded-md text-zinc-400 transition-all duration-200 hover:text-white hover:border-lime-500/60 hover:bg-zinc-900 hover:scale-105">SOFTWARE ARCHITECTURE</span>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>
+</section>

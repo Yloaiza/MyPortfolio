@@ -1,10 +1,112 @@
-<nav class="flex flex-wrap justify-around  bg-black text-white p-6 text-xl" >
-  <a href="" class="text-xl">Yojan Loaiza <span class="text-lime-500">.DEV< /> </span></a>
-  <div class="space-x-8" >
-    <a class="hover:text-lime-500" href="#about">About</a>
-    <a class="hover:text-lime-500" href="#works">Projects</a>
-    <a class="hover:text-lime-500" href="#contact">Contact</a>
+---
+// src/components/Navbar.astro
+---
+
+<nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-black/60 border-b border-white/5">
+  <div class="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
+    <!-- Brand / Logo -->
+    <a href="#" class="text-lg font-medium tracking-wide text-white">
+      Yojan Loaiza <span class="text-lime-500">.dev</span>
+    </a>
+
+    <!-- Menú + Botón i18n -->
+    <div class="flex items-center gap-8">
+      <div class="hidden sm:flex gap-8 text-sm uppercase tracking-wider">
+        <a href="#about" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+        <a href="#work" class="nav-link" data-i18n="nav.projects">Projects</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </div>
+
+      <!-- Botón de cambio de idioma -->
+      <button 
+        id="lang-toggle" 
+        aria-label="Toggle language"
+        class="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-zinc-900/80 p-1 backdrop-blur-md font-mono text-xs cursor-pointer select-none"
+      >
+        <span id="btn-en" class="px-2.5 py-1 rounded-lg transition-all duration-200">EN</span>
+        <span class="text-zinc-700">|</span>
+        <span id="btn-es" class="px-2.5 py-1 rounded-lg transition-all duration-200">ES</span>
+      </button>
+    </div>
   </div>
 </nav>
 
+<style>
+  .nav-link {
+    position: relative;
+    color: #d4d4d4;
+    transition: color 0.3s ease;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 1px;
+    background: rgb(132, 204, 22);
+    transition: width 0.3s ease;
+  }
+  .nav-link:hover { color: white; }
+  .nav-link:hover::after { width: 100%; }
+</style>
 
+<script>
+  import { translations } from '../i18n/translations';
+
+  const initI18n = () => {
+    // 1. Obtener idioma guardado o default
+    let currentLang = localStorage.getItem('user-lang') || 'en';
+
+    const toggleBtn = document.getElementById('lang-toggle');
+    const btnEn = document.getElementById('btn-en');
+    const btnEs = document.getElementById('btn-es');
+
+    // Estilos activos/inactivos para los badges del botón
+    const activeClass = ['bg-lime-500/20', 'text-lime-400', 'font-bold', 'border', 'border-lime-500/30', 'shadow-[0_0_10px_rgba(132,204,22,0.15)]'];
+    const inactiveClass = ['text-zinc-400', 'hover:text-white'];
+
+    function updateDOM(lang: 'en' | 'es') {
+      // Actualizar todos los elementos con la propiedad data-i18n
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach((el) => {
+        const key = el.getAttribute('data-i18n') as keyof typeof translations['en'];
+        if (key && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+
+      // Actualizar estado visual del botón
+      if (btnEn && btnEs) {
+        if (lang === 'en') {
+          btnEn.classList.add(...activeClass);
+          btnEn.classList.remove(...inactiveClass);
+          btnEs.classList.remove(...activeClass);
+          btnEs.classList.add(...inactiveClass);
+        } else {
+          btnEs.classList.add(...activeClass);
+          btnEs.classList.remove(...inactiveClass);
+          btnEn.classList.remove(...activeClass);
+          btnEn.classList.add(...inactiveClass);
+        }
+      }
+
+      // Guardar preferencia
+      localStorage.setItem('user-lang', lang);
+    }
+
+    // Inicializar al cargar la página
+    updateDOM(currentLang as 'en' | 'es');
+
+    // Event listener para alternar idioma al dar clic
+    toggleBtn?.addEventListener('click', () => {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      updateDOM(currentLang as 'en' | 'es');
+    });
+  };
+
+  // Ejecutar script al cargar
+  initI18n();
+  document.addEventListener('astro:page-load', initI18n);
+</script>

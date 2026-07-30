@@ -9,5 +9,12 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   integrations: [tailwind(), react()],
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    routing: {
+      prefixDefaultLocale: false 
+    }
+  }
 });

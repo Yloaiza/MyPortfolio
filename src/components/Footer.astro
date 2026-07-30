@@ -1,79 +1,83 @@
-<footer class="footer">
-  <div class="waves">
-    <div class="wave" id="wave1"></div>
-    <div class="wave" id="wave2"></div>
-    <div class="wave" id="wave3"></div>
-    <div class="wave" id="wave4"></div>
+---
+// Footer.astro
+---
+
+<footer class="w-full bg-black text-zinc-400 py-24 sm:py-32">
+  <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+      
+      <div class="space-y-4">
+        <div class="text-3xl font-serif italic text-white tracking-wide">
+          Yojan Loaiza
+        </div>
+        
+        <div>
+          <h2 class="text-xl font-bold tracking-tight text-white">
+            Yojan Loaiza
+          </h2>
+          <p class="text-xs sm:text-sm font-mono text-zinc-500 mt-1" data-i18n="footer.role">
+            Software Engineer &nbsp;·&nbsp; Full-Stack & Mobile Developer &nbsp;·&nbsp; UI/UX
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-8 w-full md:w-auto justify-between">
+        
+        <nav class="flex flex-wrap items-center gap-3 text-xs font-mono" aria-label="Footer links">
+          <a 
+            href="mailto:loaizaagudeloy@gmail.com" 
+            class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-zinc-900/60 px-3.5 py-2 text-zinc-300 hover:border-lime-500/40 hover:text-white transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+            <span data-i18n="footer.email">Email</span>
+          </a>
+
+          <a 
+            href="https://www.linkedin.com/in/yojan-arbey-loaiza-dev/" 
+            target="_blank" 
+            rel="noreferrer" 
+            class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-zinc-900/60 px-3.5 py-2 text-zinc-300 hover:border-lime-500/40 hover:text-white transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-lime-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span data-i18n="footer.linkedin">LinkedIn</span>
+          </a>
+
+          <a 
+            href="/YojanLoaizaagudelo_CV.pdf" 
+            target="_blank" 
+            rel="noreferrer" 
+            class="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-zinc-900/60 px-3.5 py-2 text-zinc-300 hover:border-lime-500/40 hover:text-white transition-all"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>
+            <span data-i18n="footer.resume">Resume</span>
+          </a>
+        </nav>
+
+        <!-- Botón circular subir al inicio -->
+        <button 
+          id="back-to-top"
+          aria-label="Back to top"
+          class="h-9 w-9 rounded-full border border-white/10 bg-zinc-900 text-zinc-400 hover:text-white hover:border-lime-500/50 flex items-center justify-center transition-all shrink-0"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+        </button>
+
+      </div>
+
+    </div>
   </div>
 </footer>
 
-<style>
-  .footer {
-    position: relative;
-    background: white;
-    padding: 40px 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 10%;
-  }
-
-  .wave {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: url("/public/wave.png");
-    background-size: 1000px 100px;
-  }
-
-  .wave#wave1 {
-    z-index: 1000;
-    opacity: 1;
-    bottom: 0;
-    animation: animateWaves 4s linear infinite;
-  }
-
-  .wave#wave2 {
-    z-index: 999;
-    opacity: 0.5;
-    bottom: 10px;
-    animation: animate 4s linear infinite !important;
-  }
-
-  .wave#wave3 {
-    z-index: 1000;
-    opacity: 0.2;
-    bottom: 15px;
-    animation: animateWaves 3s linear infinite;
-  }
-
-  .wave#wave4 {
-    z-index: 999;
-    opacity: 0.7;
-    bottom: 20px;
-    animation: animate 3s linear infinite;
-  }
-
-  @keyframes animateWaves {
-    0% {
-      background-position-x: 1000px;
+<script>
+  const setupBackToTop = () => {
+    const backToTopBtn = document.getElementById('back-to-top');
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     }
-    100% {
-      background-positon-x: 0px;
-    }
-  }
+  };
 
-  @keyframes animate {
-    0% {
-      background-position-x: -1000px;
-    }
-    100% {
-      background-positon-x: 0px;
-    }
-  }
-
-
-</style>
+  setupBackToTop();
+  document.addEventListener('astro:page-load', setupBackToTop);
+</script>

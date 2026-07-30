@@ -1,51 +1,59 @@
-<div
-    class="relative bg-cover bg-center h-[92vh]"
-    style="background-image: url('https://i.pinimg.com/originals/28/a1/77/28a177c982fd18ed254307659d82104d.gif');"
-  >
-    <div class="absolute inset-0 flex flex-col items-center justify-center">
-      <div class="text-center">
-        <h1
-          class="tracking-wide text-9xl text-white font-bold mt-[-20%] transition-transform duration-300 transform hover:scale-110"
-        >
-          HELLO, I'M YOJAN
-        </h1>
-        <h3 class="tracking-widest text-2xl text-gray-400">
-          //Passionate Learner Building Innovative Front-End Experiences.
-        </h3>
-        <div class="mouse_icon"></div>
-      </div>
-    </div>
+
+<div class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="absolute inset-0 blob blob1"></div>
+  <div class="absolute inset-0 blob blob2"></div>
+
+  <div class="relative z-10 text-center px-6 reveal">
+    <p class="text-lime-500 tracking-widest text-sm uppercase mb-4" data-i18n="hero.tag">Software engineer & mobile developer</p>
+    <h1 class="text-5xl md:text-7xl font-semibold text-white leading-tight">
+      <span data-i18n="hero.title.prefix">Hello, I'm</span> <span class="text-lime-500" data-i18n="hero.title.name">Yojan</span>
+    </h1>
+    <h3 class="mt-4 text-lg md:text-xl text-gray-400 max-w-xl mx-auto" data-i18n="hero.subtitle">
+      // Full-Stack & Mobile Engineer crafting high-performance digital products.
+    </h3> 
+    <br /><br />
+    <div class="mouse_icon mt-16"></div>
   </div>
-  
-  <style>
-    .mouse_icon {
-      position: relative;
-      width: 30px;
-      height: 60px;
-      margin: 250px auto 0;
-      border: 2px solid rgb(10, 243, 10);
-      border-radius: 50px;
-    }
-    .mouse_icon:after {
-      position: absolute;
-      top: 15px;
-      width: 15px;
-      height: 15px;
-      content: "";
-      background-color: rgb(10, 243, 10);
-      left: calc(60% - 10px);
-      border-radius: 10px;
-      animation: mouse 1.5s infinite;
-    }
-    @keyframes mouse {
-      0% {
-        opacity: 1;
-        top: 1px;
-      }
-      100% {
-        opacity: 0;
-        top: 30px;
-      }
-    }
-  </style>
-  
+</div>
+
+<style>
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+  }
+  .blob { border-radius: 50%; filter: blur(90px); opacity: 0.35; }
+  .blob1 {
+    width: 400px; height: 400px;
+    background: rgba(132, 204, 22, 0.4);
+    top: -10%; left: -10%;
+    animation: float1 12s ease-in-out infinite;
+  }
+  .blob2 {
+    width: 350px; height: 350px;
+    background: rgba(132, 204, 22, 0.25);
+    bottom: -15%; right: -10%;
+    animation: float2 14s ease-in-out infinite;
+  }
+  @keyframes float1 { 0%,100% { transform: translate(0,0);} 50% { transform: translate(40px,30px);} }
+  @keyframes float2 { 0%,100% { transform: translate(0,0);} 50% { transform: translate(-30px,-40px);} }
+
+  .mouse_icon {
+    position: relative;
+    width: 26px; height: 44px;
+    margin: 0 auto;
+    border: 2px solid rgba(132, 204, 22, 0.6);
+    border-radius: 50px;
+  }
+  .mouse_icon:after {
+    position: absolute; top: 8px;
+    width: 4px; height: 8px; content: "";
+    background-color: rgb(132, 204, 22);
+    left: calc(50% - 2px); border-radius: 10px;
+    animation: mouse 1.5s infinite;
+  }
+  @keyframes mouse { 0% { opacity: 1; top: 8px; } 100% { opacity: 0; top: 24px; } }
+</style>

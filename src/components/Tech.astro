@@ -1,77 +1,131 @@
-<section class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
-  <h1 class="text-white flex justify-center text-7xl">My Stack</h1>
-  <br /><br />
-  <div
-    x-data="{}"
-    x-init="$nextTick(() => {
-      let ul = $refs.logos;
-      ul.insertAdjacentHTML('afterend', ul.outerHTML);
-      ul.nextSibling.setAttribute('aria-hidden', 'true');
-  })"
-    class="opacity-80 w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
-  >
-    <ul
-      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
-    >
+---
+// Stack.astro
+---
+
+<section class="container mx-auto py-20 px-4 sm:px-6 lg:px-8">
+  <!-- Encabezado -->
+  <div class="text-center mb-16">
+    <h1 class="text-white text-4xl sm:text-5xl font-extrabold tracking-tight mt-2" data-i18n="stack.title">My Stack</h1>
+  </div>
+
+  <!-- Contenedor del Carousel Infinito -->
+  <div class="w-full inline-flex flex-nowrap overflow-hidden py-6 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+    
+    <!-- Lista Original -->
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-infinite-scroll shrink-0">
       <li>
-        <img src="/react.png" alt="react" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="/react.png" alt="React" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">React</span>
+        </div>
       </li>
       <li>
-        <img src="./angular.png" alt="angular" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./angular.png" alt="Angular" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Angular</span>
+        </div>
       </li>
       <li>
-        <img src="./astro.svg" alt="astro" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./astro.svg" alt="Astro" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Astro</span>
+        </div>
       </li>
       <li>
-        <img src="./nextjs.png" alt="nextjs" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./nextjs.png" alt="Next.js" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Next.js</span>
+        </div>
       </li>
       <li>
-        <img src="./javascript.png" alt="js" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./javascript.png" alt="JavaScript" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">JavaScript</span>
+        </div>
       </li>
       <li>
-        <img src="./typescript.png" alt="ts" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./typescript.png" alt="TypeScript" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">TypeScript</span>
+        </div>
       </li>
       <li>
-        <img src="./python.png" alt="python" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./python.png" alt="Python" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Python</span>
+        </div>
       </li>
       <li>
-        <img src="./tailwind.png" alt="tailwind" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./tailwind.png" alt="Tailwind CSS" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Tailwind</span>
+        </div>
       </li>
       <li>
-        <img src="./git.png" alt="git" />
-      </li>
-    </ul>
-    <ul
-      class="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
-      aria-hidden="true"
-    >
-      <li>
-        <img src="/react.png" alt="Facebook" />
-      </li>
-      <li>
-        <img src="./angular.png" alt="Disney" />
-      </li>
-      <li>
-        <img src="./astro.svg" alt="Airbnb" />
-      </li>
-      <li>
-        <img src="./nextjs.png" alt="Apple" />
-      </li>
-      <li>
-        <img src="./javascript.png" alt="Spark" />
-      </li>
-      <li>
-        <img src="./typescript.png" alt="Samsung" />
-      </li>
-      <li>
-        <img src="./python.png" alt="Quora" />
-      </li>
-      <li>
-        <img src="./tailwind.png" alt="Sass" />
-      </li>
-      <li>
-        <img src="./git.png" alt="Sass" />
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./git.png" alt="Git" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Git</span>
+        </div>
       </li>
     </ul>
+
+    <!-- Lista Duplicada -->
+    <ul class="flex items-center justify-center md:justify-start [&_li]:mx-8 animate-infinite-scroll shrink-0" aria-hidden="true">
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="/react.png" alt="React" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">React</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./angular.png" alt="Angular" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Angular</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./astro.svg" alt="Astro" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Astro</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./nextjs.png" alt="Next.js" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Next.js</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./javascript.png" alt="JavaScript" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">JavaScript</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./typescript.png" alt="TypeScript" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">TypeScript</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./python.png" alt="Python" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Python</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./tailwind.png" alt="Tailwind CSS" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Tailwind</span>
+        </div>
+      </li>
+      <li>
+        <div class="group flex flex-col items-center justify-center cursor-pointer">
+          <img class="h-16 w-16 object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" src="./git.png" alt="Git" />
+          <span class="text-xs font-semibold text-slate-500 mt-3 group-hover:text-lime-400 transition-colors duration-300">Git</span>
+        </div>
+      </li>
+    </ul>
+
   </div>
 </section>

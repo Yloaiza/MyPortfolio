@@ -1,33 +1,53 @@
-<section id="about" class="bg-black">
-    <div class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div class="max-w-lg">
-          <h2 class="text-3xl font-extrabold text-white sm:text-7xl">
-            About <span class="text-lime-500">Me</span>
-          </h2>
-          <p class="mt-4 text-white text-2xl">
-            🚀 I'm a proactive individual who thrives as an excellent team
-            player, organized, and responsible. I'm always eager to dive into
-            new experiences, driven by the excitement of learning. <br />My
-            goal? Securing a challenging and dynamic position where I can share
-            my experience and at the same time gain new knowledge 🧠 as I embark
-            on a journey of continuous growth and discovery. Let's make waves
-            together! 🌊
-          </p>
-          <div class="mt-8">            
-            <a href="YojanLoaizaagudelo_CV.pdf" download="YojanLoaizaagudelo_CV.pdf"class="text-lime-500 hover:text-lime-300 text-2xl "
-              >DOWNLOAD MY CV
-              <span class="ml-2">&#8595;</span></a
-            >
-          </div>
+---
+// About.astro
+---
+
+<section id="about" class="bg-black py-24">
+  <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+    <!-- Texto e información -->
+    <div class="reveal">
+      <h2 class="text-3xl md:text-5xl font-semibold text-white">
+        <span data-i18n="about.title">About</span> 
+        <span class="text-lime-500" data-i18n="about.me">Me</span>
+      </h2>
+
+      <p class="mt-6 text-gray-400 leading-relaxed" data-i18n="about.p1">
+        Software Engineer specialized in building fast, scalable web and mobile applications. I combine modern full-stack engineering with a clean UX mindset—designing, developing, and shipping intuitive, production-ready systems from back-end logic to responsive interfaces.
+      </p>
+
+      <p class="mt-4 text-gray-400 leading-relaxed" data-i18n="about.p2">
+        Driven by a continuous learning mindset and high standards of execution, I thrive in collaborative, fast-paced environments. I am looking to join a dynamic team where I can take technical ownership, solve complex product challenges, and contribute to building high-impact software.
+      </p>
+
+      <a 
+        href="/YojanLoaizaagudelo_CV.pdf" 
+        download 
+        class="inline-flex items-center gap-2 mt-8 text-lime-500 hover:text-lime-300 transition-colors font-mono text-sm"
+      >
+        <span data-i18n="about.cv">Download my CV</span> <span>↓</span>
+      </a>
+    </div>
+
+    <!-- Contenedor de la Imagen con Sweep Shimmer -->
+    <div class="reveal flex justify-center">
+      <div class="group relative rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/60 p-2 backdrop-blur-md transition-all duration-500 hover:border-lime-500/50 hover:shadow-[0_0_30px_rgba(132,204,22,0.15)]">
+        
+        <!-- BANDA DE LUZ SWEEP (Pasa de izquierda a derecha al hacer Hover) -->
+        <div class="pointer-events-none absolute inset-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="absolute -top-[50%] -bottom-[50%] w-1/2 bg-gradient-to-r from-transparent via-lime-400/20 to-transparent -rotate-45 -translate-x-[200%] group-hover:translate-x-[350%] transition-transform duration-1000 ease-in-out"></div>
         </div>
-        <div class="mt-12 md:mt-0">
-          <img
-            src="/profile.jpg"
-            alt="About Us Image"
-            class="object-cover rounded-lg shadow-md"
-          />
-        </div>
+
+        <!-- Esquinas Decorativas Animadas -->
+        <span class="absolute top-3 left-3 h-3 w-3 border-t-2 border-l-2 border-lime-500/60 z-20 transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border-lime-400"></span>
+        <span class="absolute bottom-3 right-3 h-3 w-3 border-b-2 border-r-2 border-lime-500/60 z-20 transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:border-lime-400"></span>
+
+        <!-- Imagen del Perfil -->
+        <img
+          src="/profile.jpg"
+          alt="Yojan Loaiza"
+          class="relative z-0 rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-1 block w-full h-auto object-cover"
+        />
       </div>
     </div>
-  </section>
+  </div>
+</section>

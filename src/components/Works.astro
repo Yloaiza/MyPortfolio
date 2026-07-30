@@ -1,109 +1,226 @@
 ---
-import CardGrid from "../components/CardGrid.astro";
+// src/components/WorkSection.astro
 
-interface CardProps {
-  image: string;
-  title: string;
-  description: string;
-  tags: string[];
-  live: string;
-  code: string;
-}
-
-interface TechProps {
-  image: string;
-  title: string;
-}
-
-const techs: TechProps[] = [
+const projects = [
   {
-    image: "/react.png",
-    title: "React",
-  },
-  {
-    image: "",
-    title: "Angular",
-  },
-  {
-    image: "",
-    title: "Astro",
-  },
-];
-
-const cards: CardProps[] = [
-  {
-    image: "/spotify.png",
-    title: "Spotify Clone",
-    description:
-      "This project is a Spotify clone built using modern web technologies. The application replicates key features of Spotify, such as music streaming, playlists, and user interface components, providing a seamless and responsive user experience across devices.",
-    tags: [
-      "React",
-      "Astro",
-      "Svelte",
-      "Tailwindcss",
-      "Zustand",
-      "Typescript",
-      "React router dom",
+    id: "task-manager-mobile",
+    title: "Task Manager Mobile",
+    taglineKey: "projects.task.tagline",
+    categoryKey: "projects.task.category",
+    descriptionKey: "projects.task.description",
+    roleKey: "projects.task.role",
+    stack: ["React Native", "Expo", "Spring Boot", "Groq AI"],
+    whatIOwnedKey: "projects.task.whatIOwned",
+    keyWorkKeys: [
+      "projects.task.keyWork.1",
+      "projects.task.keyWork.2",
+      "projects.task.keyWork.3",
+      "projects.task.keyWork.4"
     ],
-    live: "https://spotifyastro.netlify.app",
-    code: "https://github.com/Yloaiza/SpotifyAstro",
+    previewBg: "from-lime-500/10 to-zinc-950"
   },
   {
-    image: "/spotify.png",
-    title: "Spotify Clone",
-    description: "Spotify clone functional and interactive",
-    tags: [
-      "React",
-      "Astro",
-      "Svelte",
-      "Tailwindcss",
-      "Zustand",
-      "Typescript",
-      "React router dom",
+    id: "storef",
+    title: "STOREF",
+    taglineKey: "projects.storef.tagline",
+    categoryKey: "projects.storef.category",
+    descriptionKey: "projects.storef.description",
+    roleKey: "projects.storef.role",
+    stack: ["Java", "Spring Boot", "PostgreSQL", "React"],
+    whatIOwnedKey: "projects.storef.whatIOwned",
+    keyWorkKeys: [
+      "projects.storef.keyWork.1",
+      "projects.storef.keyWork.2",
+      "projects.storef.keyWork.3",
+      "projects.storef.keyWork.4"
     ],
-    live: "https://spotifyastro.netlify.app",
-    code: "https://github.com/Yloaiza/SpotifyAstro",
+    previewBg: "from-emerald-500/10 to-zinc-950"
   },
   {
-    image: "/spotify.png",
-    title: "Spotify Clone",
-    description: "Spotify clone functional and interactive",
-    tags: [
-      "React",
-      "Astro",
-      "Svelte",
-      "Tailwindcss",
-      "Zustand",
-      "Typescript",
-      "React router dom",
+    id: "vistogps",
+    title: "4Track / VistoGPS",
+    taglineKey: "projects.vistogps.tagline",
+    categoryKey: "projects.vistogps.category",
+    descriptionKey: "projects.vistogps.description",
+    roleKey: "projects.vistogps.role",
+    stack: ["Flutter", "Dart", "REST APIs", "Google Maps SDK"],
+    whatIOwnedKey: "projects.vistogps.whatIOwned",
+    keyWorkKeys: [
+      "projects.vistogps.keyWork.1",
+      "projects.vistogps.keyWork.2",
+      "projects.vistogps.keyWork.3",
+      "projects.vistogps.keyWork.4"
     ],
-    live: "https://spotifyastro.netlify.app",
-    code: "https://github.com/Yloaiza/SpotifyAstro",
-  },
-  {
-    image: "/spotify.png",
-    title: "Spotify Clone",
-    description: "Spotify clone functional and interactive",
-    tags: [
-      "React",
-      "Astro",
-      "Svelte",
-      "Tailwindcss",
-      "Zustand",
-      "Typescript",
-      "React router dom",
-    ],
-    live: "https://spotifyastro.netlify.app",
-    code: "https://github.com/Yloaiza/SpotifyAstro",
-  },
+    previewBg: "from-cyan-500/10 to-zinc-950"
+  }
 ];
 ---
 
-<section id="works" class="container mx-auto py-16 px-4 sm:px-6 lg:px-8">
-  <h1 class="text-lime-500 text-8xl">
-    <span class="text-white">My</span> Projects
-  </h1>
-  <br /><br />
-  <CardGrid cards={cards} />
+<section id="work" class="py-24 max-w-6xl mx-auto px-6">
+  <div class="space-y-4 mb-12">
+    <span class="text-xs font-mono uppercase tracking-widest text-lime-400" data-i18n="projects.section.tag">// Selected work</span>
+    <h2 class="text-3xl sm:text-5xl font-bold text-white tracking-tight" data-i18n="projects.section.title">Real products, ready to use.</h2>
+  </div>
+
+  <!-- GRID DE TARJETAS -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((project) => (
+      <article 
+        class="project-card group relative rounded-2xl border border-white/10 bg-zinc-900/60 p-6 backdrop-blur-md overflow-hidden transition-all duration-500 hover:border-lime-500/50 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(132,204,22,0.1)] flex flex-col justify-between cursor-pointer"
+        data-target-modal={project.id}
+      >
+        <!-- BANDA DE LUZ SWEEP -->
+        <div class="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div class="absolute -top-[50%] -bottom-[50%] w-1/2 bg-gradient-to-r from-transparent via-lime-400/15 to-transparent -rotate-45 -translate-x-[200%] group-hover:translate-x-[350%] transition-transform duration-1000 ease-in-out"></div>
+        </div>
+
+        <!-- Esquinas Decorativas Animadas -->
+        <span class="absolute top-3 left-3 h-2.5 w-2.5 border-t-2 border-l-2 border-lime-500/50 z-10 transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 group-hover:border-lime-400"></span>
+        <span class="absolute bottom-3 right-3 h-2.5 w-2.5 border-b-2 border-r-2 border-lime-500/50 z-10 transition-all duration-300 group-hover:translate-x-1 group-hover:translate-y-1 group-hover:border-lime-400"></span>
+
+        <!-- CONTENIDO DE LA TARJETA -->
+        <div class="relative z-10">
+          <!-- Image Container -->
+          <div class={`relative w-full h-44 rounded-xl overflow-hidden bg-gradient-to-br ${project.previewBg} border border-white/10 mb-6 group-hover:border-lime-500/30 transition-colors flex items-center justify-center`}>
+            <span class="text-xs font-mono text-zinc-500" data-i18n="projects.preview.asset">[ Preview Asset ]</span>
+          </div>
+
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-lime-500/10 border border-lime-500/30 flex items-center justify-center text-lime-400 font-mono font-bold text-xs shrink-0">
+              {project.title.substring(0, 2).toUpperCase()}
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">{project.title}</h3>
+          </div>
+
+          <p class="text-xs text-zinc-400 leading-relaxed mb-4" data-i18n={project.descriptionKey}>
+            {project.descriptionKey}
+          </p>
+        </div>
+
+        <div class="relative z-10">
+          <p class="text-[11px] font-mono text-zinc-500 mb-4" data-i18n={project.taglineKey}>{project.taglineKey}</p>
+          <button type="button" class="w-full py-2.5 rounded-xl border border-white/10 bg-zinc-950/80 text-xs font-mono font-semibold text-zinc-300 group-hover:border-lime-500/40 group-hover:text-lime-400 flex items-center justify-center gap-2 transition-all">
+            <span data-i18n="projects.btn.view">View case study</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </article>
+    ))}
+  </div>
 </section>
-<br /><br />
+
+<!-- MODALES RENDERIZADOS DINÁMICAMENTE -->
+{projects.map((project) => (
+  <div 
+    id={`modal-${project.id}`} 
+    class="project-modal fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6 overflow-y-auto"
+  >
+    <div class="relative w-full max-w-4xl rounded-3xl border border-white/10 bg-zinc-950 p-6 sm:p-10 shadow-2xl space-y-8 my-auto max-h-[90vh] overflow-y-auto custom-scrollbar">
+      
+      <!-- Close Button -->
+      <button 
+        type="button" 
+        class="close-modal-btn absolute top-6 right-6 h-10 w-10 rounded-full border border-white/10 bg-zinc-900 text-zinc-400 hover:text-white hover:border-lime-500 flex items-center justify-center transition-colors"
+        aria-label="Close modal"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+
+      <!-- Header -->
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-widest text-lime-400" data-i18n={project.categoryKey}>{project.categoryKey}</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-white">{project.title}</h2>
+      </div>
+
+      <!-- Top Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        <div class="lg:col-span-8 rounded-2xl border border-white/10 bg-zinc-900 overflow-hidden p-2">
+          <div class={`w-full h-64 sm:h-80 rounded-xl bg-gradient-to-br ${project.previewBg} flex items-center justify-center border border-white/5`}>
+            <p class="text-xs font-mono text-zinc-500" data-i18n={`projects.${project.id}.gallery`}>[ {project.title} Showcase Gallery ]</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 space-y-4">
+          <div class="rounded-xl border border-white/10 bg-zinc-900/50 p-4">
+            <p class="text-[10px] font-mono uppercase text-zinc-500" data-i18n="projects.modal.role">ROLE</p>
+            <p class="text-sm font-semibold text-white mt-1" data-i18n={project.roleKey}>{project.roleKey}</p>
+          </div>
+
+          <div class="rounded-xl border border-white/10 bg-zinc-900/50 p-4">
+            <p class="text-[10px] font-mono uppercase text-zinc-500" data-i18n="projects.modal.stack">TECH STACK</p>
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              {project.stack.map((tech) => (
+                <span class="text-[10px] font-mono bg-zinc-950 px-2 py-0.5 rounded border border-white/10 text-lime-400">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- What I owned -->
+      <div class="space-y-3">
+        <h3 class="text-sm font-mono uppercase tracking-wider text-zinc-400" data-i18n="projects.modal.owned">What I owned</h3>
+        <p class="text-sm text-zinc-300 leading-relaxed" data-i18n={project.whatIOwnedKey}>{project.whatIOwnedKey}</p>
+      </div>
+
+      <!-- Key work -->
+      <div class="space-y-3">
+        <h3 class="text-sm font-mono uppercase tracking-wider text-zinc-400" data-i18n="projects.modal.keywork">Key work</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {project.keyWorkKeys.map((itemKey) => (
+            <div class="rounded-xl border border-white/5 bg-zinc-900/40 p-4 text-xs text-zinc-300">
+              • <span data-i18n={itemKey}>{itemKey}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+))}
+
+<!-- SCRIPT CLIENTE PARA ABRIR Y CERRAR MODALES -->
+<script>
+  const setupModals = () => {
+    const cards = document.querySelectorAll('.project-card');
+    const modals = document.querySelectorAll('.project-modal');
+    const closeBtns = document.querySelectorAll('.close-modal-btn');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const modalId = card.getAttribute('data-target-modal');
+        const modal = document.getElementById(`modal-${modalId}`);
+        if (modal) {
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const modal = btn.closest('.project-modal');
+        if (modal) {
+          modal.classList.remove('flex');
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+
+    modals.forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('flex');
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+  };
+
+  setupModals();
+  document.addEventListener('astro:page-load', setupModals);
+</script>
